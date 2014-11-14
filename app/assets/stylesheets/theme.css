@@ -1,0 +1,28 @@
+.bx-pager{
+  display: none;
+}
+.product{
+  text-align: center;
+}
+.product img{
+  border: 1px solid green;
+  border-radius: 5px;
+}
+.product input{
+  width: 160px;
+}
+.about{
+  padding: 50px;
+}
+.about .col-md-7{
+  padding-left: 70px;
+}
+.about .col-md-7 ul li{
+  margin-top: 10px;
+}
+.footer{
+  color: #4183c4;
+  border-top: solid 3px #c3c3c3;
+  padding: 41px 30px 30px 54px;
+  font-family: "KievitWeb", "Arial";
+}

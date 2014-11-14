@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div class="container">
+<h1>Order Details</h1>
+    <table>
+      <tr>
+        <td>Number</td>
+        <td>Order date</td>
+        <td>State</td>
+        <td>Payment State</td>
+        <td>Shipmemt state</td>
+        <td>Total</td>
+      </tr>
+      <hr>
+        <tr class="<%= cycle('even', 'odd') %>">
+          <td class="order-number"><%= @order.number %></td>
+          <td class="order-date"><%= @order.updated_at %></td>
+          <td class="order-status"><%= @order.state %></td>
+          <td class="order-payment-state"><%= @order.payment_total %></td>
+          <td class="order-shipment-state"><%= @order.shipment_state %></td>
+          <td class="order-total"><%= @order.total %></td>
+        </tr>
+    </table>
+    </div>
+</body>
+</html>
+<style type="text/css">
+	table tr td{
+		padding: 15px;
+	}
+	table{
+		width: 100%;
+	}
+	hr{
+		height: 1px;
+		background-color: black;
+	}
+	.container{
+		margin-bottom: 350px;
+	}
+</style>

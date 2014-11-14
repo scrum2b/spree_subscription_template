@@ -1,0 +1,35 @@
+<div id="checkout" data-hook>  
+  <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %>
+  
+  <div class="row" data-hook="checkout_header">
+    <h1 class="columns three alpha" data-hook="checkout_title"><%= Spree.t(:checkout) %></h1>
+    <div class="columns thirteen omega" data-hook="checkout_progress"></div>
+  </div>
+  
+  <div class="row" data-hook="checkout_content">
+    <div class="columns <%= if @order.state != 'confirm' then 'alpha twelve' else 'alpha omega sixteen' end %>" data-hook="checkout_form_wrapper">
+      <%= form_for @order, :url => update_checkout_path(@order.state), :html => { :id => "form-ship" } do |form| %>
+        <% if @order.state == 'address' || !@order.email? %>
+          <p class="field" style='clear: both'>
+            <%= form.label :email %><br />
+            <%= form.text_field :email %>
+          </p>
+        <% end %>
+        <%= render :partial => "spree/checkout/address", :locals => { :form => form } %>
+      <% end %>
+    </div>      
+
+  </div>
+</div>
+
+<style type="text/css">
+  #checkout{padding-left: 50px!important;}
+</style>
+
+<script>
+Spree.current_order_id = "<%= @order.number %>"
+</script>
+
+<% if I18n.locale != :en %>
+  <script src="<%= assets_prefix %>/jquery.validate/localization/messages_<%= I18n.locale.to_s.downcase.gsub("-", "") %>.js"></script>
+<% end %>

@@ -1,0 +1,33 @@
+<div class="panel-body">
+  <div class="container">
+    <div class="col-md-6">
+      <h3>Where should we ship ? </h3>
+      <form name="f" action="" method="POST" class="form-ship" id="form-ship">
+        <input type="text" name="order[bill_address_attributes][firstname]" placeholder="First name" class="firstname">
+        <input type="text" name="order[bill_address_attributes][lastname]" placeholder="Last name" class="lastname">
+        <input type="text" name="order[bill_address_attributes][address1]" placeholder="Adrress line 1" class="adrress"><br>
+        <input type="text" name="order[bill_address_attributes][address2]" placeholder="Adrress line 2" class="adrress"><br>
+        <input type="text" name="order[bill_address_attributes][city]" placeholder="City" class="city">
+        <select class="select" name="select">
+          <option value="VN">Volvo</option>
+          <option value="TD">Saab</option>
+          <option value="FO">Mercedes</option>
+          <option value="IN">Audi</option>
+        </select>
+        <input type="text" name="order[bill_address_attributes][zipcode]" placeholder="Zip" class="zip">
+        <h3>Create my account</h3>
+        <input type="text" name="Email" placeholder="email" class="adrress" value="giang.phan1106@gmail.com"><br>
+        <input type="text" name="Password" placeholder="Password" class="adrress">
+        <input type="hidden" name="order[bill_address_attributes][company]" value="scrum2b">
+        <input type="hidden" name="order[bill_address_attributes][phone]" value="0979383826">
+        <input type="hidden" name="order[bill_address_attributes][alternative_phone]" value="null">
+        <input type="hidden" name="order[bill_address_attributes][country_id]" value="1">
+        <input type="hidden" name="order[bill_address_attributes][state_id]" value="48">
+        <h6>By registering, you agree to our Terms of Service</h6>
+      </form>
+      <input type="button" class="submit" id="ship" value="NEXT"> 
+    </div>
+
+  </div>
+</div>
+<!--  -->

@@ -1,0 +1,16 @@
+<% if flash[:alert] %>
+  <div class="flash errors"><%= flash[:alert] %></div>
+<% end %>
+
+<% @body_id = 'login' %>
+<div class="container login_page section">
+  <div id="existing-customer" class="col-md-6">
+    <h4 class="text_blue"><%= Spree.t(:login_as_existing) %></h4>
+    <div data-hook="login">
+      <%= render :partial => 'spree/shared/login' %>  
+    </div>
+  </div>
+  <div class="col-md-6">
+    <%= render :partial => 'spree/shared/register', :locals => {:user => @user}%>
+  </div>
+</div>

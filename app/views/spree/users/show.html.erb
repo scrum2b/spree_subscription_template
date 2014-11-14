@@ -1,0 +1,133 @@
+<div class="container">
+	<div class="col-md-4">
+		<h3>My account</h3><br>
+		<p class="tow"><a href="#">Free box</a>  2</p>
+		<a href="#">Account info</a><br>
+		<a href="#">Your Bundle</a><br>
+	</div>
+	<div class="col-md-8">
+		<div class="row">
+			<div class="col-md-4">
+				<h4>Your Bundle</h4><br>
+				<img src="#">
+			</div>
+			<div class="col-md-4">
+				<h4 class="add">(+) Add Bundle</h4><br>
+				<img src="#">
+			</div>
+			<div class="col-md-4">
+				<h4 class="add">(-) Remove Bundle</h4><br>
+				<img src="#">
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-5">
+				<h4>Your Subscription </h4><br>
+				<h4>Monthy</h4>
+			</div>
+			<div class="col-md-7" class="Subscription">
+				<h4>Change Subscription</h4><br>
+				<input type="number" value="1" class="month">
+				<input type="submit" value="Submit" class="submit"><br>
+				<p>Monthy : $1/day to better heathy (per Bundle)</p>
+				<p>Annual : $0.75/day to heathy (Save 20%)</p>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<h3>Your Delivery Schedule</h3>
+			<table class="table">
+				<tr>
+		<td>Date,Time</td>
+		<td>Product key</td>
+		<td>Status</td>
+		<td>Details</td>
+	</tr>
+				<% @orders.each do |order| %>
+				<tr>
+					<td><%= order.updated_at.day  %> - <%= order.updated_at.month %>  ,<%=  order.updated_at.year %></td>
+					<td>
+						<% if order.products.present? %>
+						<%= order.products.first.product_key %>
+						<% end %>
+					</td>	
+					<td>
+						<% if order.confirmation_delivered == false %>
+						<%= "Shipped" %>
+						<% else %>
+						<%= "Shippe" %>
+						<% end %>
+					</td>
+					<td><a href="/users/details?id=<%= order.id %>">Details</a></td>
+				</tr>
+				<% end %>
+			</table>
+			<center>
+				<div class="pages">
+					<div class="item"><%= will_paginate @orders %></div>			
+					<% if @count > 5 %>
+					<div class="show"><a href="/user/alldetails" class="showall">Show details</a></div>
+					<% end %>
+				</div>
+			</center>
+		</div>
+	</div>
+	<style type="text/css">
+		.pages{
+			display: inline;
+			text-align: center;
+		}
+		.pages .item{
+			text-align: center;	
+		}
+		.show{
+			margin-bottom: 20px;
+		}
+		.showall
+		{
+			margin-bottom: 10px;
+			font-size: 14px;
+			border-radius: 2px;	
+			background: rgb(242, 101, 34);
+			border-color: rgb(242, 101, 34);
+			color: #fff;
+			border:none;
+			height: 30px;
+			padding: 5px;
+		}
+		hr{
+			background-color: black!important;
+			height: 1px;
+		}
+		.month{
+			height: 30px;
+			width: 300px;
+		}
+		.submit{
+			height: 30px;
+			border-radius: 10px;
+			box-shadow: none;
+			border: none;
+		}
+		.Subscription p{
+			font-size: 10px;
+		}
+		.table{
+			height: 250px;
+			margin-bottom: 0px!important;
+		}
+		.table td{
+			height: 30px!important;
+		}
+		.add{
+			border: 1px solid black;
+			padding: 2px;
+		}
+		.tow{
+			margin: 0px!important;
+		}
+		.tow a{
+			margin-right: 15px;
+		}
+	</style>

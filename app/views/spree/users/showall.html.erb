@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div class="container">
+<h1>Show all details</h1>
+	<table class="table">
+	<tr>
+		<td>Date,Time</td>
+		<td>Product key</td>
+		<td>Status</td>
+		<td>Details</td>
+	</tr>
+		<% @orders.each do |order| %>
+		<tr>
+			<td><%= order.updated_at.day  %> - <%= order.updated_at.month %>  ,<%=  order.updated_at.year %></td>
+			<td>
+				<% if order.products.present? %>
+				<%= order.products.first.product_key %>
+				<% end %>
+			</td>	
+			<td>
+				<% if order.confirmation_delivered == false %>
+				<%= "Shipped" %>
+				<% else %>
+				<%= "Shippe" %>
+				<% end %>
+			</td>
+			<td><a href="/users/details?id=<%= order.id %>">Details</a></td>
+		</tr>
+		<% end %>
+	</table>
+	</div>
+</body>
+</html>

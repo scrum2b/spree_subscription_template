@@ -5,13 +5,13 @@ require "spree_subscription_template/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "Spree Storefront for Subscription Template"
+  s.name        = "Subscription Application Template"
   s.version     = SpreeSubscriptionTemplate::VERSION
   s.authors     = ["ScrumTobe Software"]
   s.email       = ["scrum2b@ithanoi.com"]
   s.homepage    = "www.scrumtobe.com"
-  s.summary     = "Spree Storefront for Subscription Template."
-  s.description = "Spree Storefront for Subscription Template."
+  s.summary     = "Spree As Light-weight Application Template (SALAT): Subscription Appliction Template"
+  s.description = "Spree As Light-weight Application Template (SALAT): Subscription Appliction Template"
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
