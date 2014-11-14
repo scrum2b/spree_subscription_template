@@ -12,3 +12,13 @@ gemspec
 
 # To use debugger
 # gem 'debugger'
+
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'bxslider-rails'
+
+gem 'spree', '2.2.2'
+gem 'spree_auth_devise', '2.2.0', github: 'spree/spree_auth_devise', branch: '2-2-stable'
+gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-2-stable'
+gem 'spree_related_products', github: 'spree/spree_related_products', branch: '2-2-stable'
+#gem 'spree_subscriptions', :git => 'git://github.com/nebulab/spree-subscriptions.git', :branch => '2-2-stable'
+
